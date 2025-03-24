@@ -29,22 +29,22 @@ note() {
     banner
     echo -e " ${G} [-] Successfully Installed !\n"${W}
     sleep 1
-    cat <<- EOF
-         ${G}[-] Type ${C}vncstart${G} to run VNC server.
-         ${G}[-] Type ${C}vncstop${G} to stop VNC server.
+    cat <<EOF
+${G}[-] Type ${C}vncstart${G} to run VNC server.
+${G}[-] Type ${C}vncstop${G} to stop VNC server.
 
-         ${C}Install VNC VIEWER on your Device.
+${C}Install VNC VIEWER on your Device.
 
-         ${C}Open VNC VIEWER & Click on + Button.
+${C}Open VNC VIEWER & Click on + Button.
 
-         ${C}Enter the Address localhost:1 & Name anything you like.
+${C}Enter the Address localhost:1 & Name anything you like.
 
-         ${C}Set the Picture Quality to High for better Quality.
+${C}Set the Picture Quality to High for better Quality.
 
-         ${C}Click on Connect & Input the Password.
+${C}Click on Connect & Input the Password.
 
-         ${C}Enjoy :D${W}
-    EOF
+${C}Enjoy :D${W}
+EOF
 }
 
 package() {
