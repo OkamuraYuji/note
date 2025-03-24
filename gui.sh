@@ -18,30 +18,9 @@ check_root(){
 banner() {
     clear
     echo -e "${Y}    _  _ ___  _  _ _  _ ___ _  _    _  _ ____ ___"
-    echo -e "${C}    |  | |__] |  | |\ |  |  |  |    |\\/| |  | |  \\"
+    echo -e "${C}    |  | |__] |  | |\ |  |  |  |    |\/| |  | |  \\" 
     echo -e "${G}    |__| |__] |__| | \\|  |  |__|    |  | |__| |__/"
     echo -e "${G}     A modded GUI version of Ubuntu\n"
-}
-
-note() {
-    banner
-    echo -e " ${G} [-] Successfully Installed !\n${W}"
-    sleep 1
-
-    echo -e "${G}[-] Type ${C}vncstart${G} to run VNC server."
-    echo -e "${G}[-] Type ${C}vncstop${G} to stop VNC server."
-    echo -e ""
-    echo -e "${C}Install VNC VIEWER on your Device."
-    echo -e ""
-    echo -e "${C}Open VNC VIEWER & Click on + Button."
-    echo -e ""
-    echo -e "${C}Enter the Address localhost:1 & Name anything you like."
-    echo -e ""
-    echo -e "${C}Set the Picture Quality to High for better Quality."
-    echo -e ""
-    echo -e "${C}Click on Connect & Input the Password."
-    echo -e ""
-    echo -e "${C}Enjoy :D${W}"
 }
 
 package() {
@@ -49,7 +28,7 @@ package() {
     echo -e "${R} [${W}-${R}]${C} Checking required packages..."${W}
     apt-get update -y
 
-    packs=(sudo gnupg2 curl nano git xz-utils xfce4 xfce4-goodies xfce4-terminal librsvg2-common inetutils-tools tigervnc-standalone-server tigervnc-common tigervnc-tools dbus-x11 fonts-beng fonts-beng-extra gtk2-engines-murrine gtk2-engines-pixbuf apt-transport-https)
+    packs=(sudo gnupg2 curl nano git xz-utils xfce4 xfce4-goodies xfce4-terminal librsvg2-common inetutils-tools dbus-x11 fonts-beng fonts-beng-extra gtk2-engines-murrine gtk2-engines-pixbuf apt-transport-https)
     for pkg in "${packs[@]}"; do
         dpkg -s "$pkg" &>/dev/null || {
             echo -e "\n${R} [${W}-${R}]${G} Installing package: ${Y}$pkg${W}"
@@ -108,4 +87,3 @@ package
 install_vscode
 install_sublime
 config
-note
