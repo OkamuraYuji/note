@@ -6,7 +6,7 @@ Y="$(printf '\033[1;33m')"
 W="$(printf '\033[1;37m')"
 C="$(printf '\033[1;36m')"
 arch=$(uname -m)
-username=$(logname)
+username=$(getent passwd $(whoami) | cut -d ':' -f1)
 
 check_root(){
     if [ "$(id -u)" -ne 0 ]; then
