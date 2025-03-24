@@ -17,34 +17,33 @@ check_root(){
 
 banner() {
     clear
-    cat <<- EOF
-        ${Y}    _  _ ___  _  _ _  _ ___ _  _    _  _ ____ ___
-        ${C}    |  | |__] |  | |\ |  |  |  |    |\/| |  | |  \
-        ${G}    |__| |__] |__| | \|  |  |__|    |  | |__| |__/
-    EOF
+    cat <<EOF
+${Y}    _  _ ___  _  _ _  _ ___ _  _    _  _ ____ ___
+${C}    |  | |__] |  | |\ |  |  |  |    |\/| |  | |  \ 
+${G}    |__| |__] |__| | \|  |  |__|    |  | |__| |__/
+EOF
     echo -e "${G}     A modded GUI version of Ubuntu\n"
 }
 
 note() {
     banner
-    echo -e " ${G} [-] Successfully Installed !\n"${W}
+    echo -e " ${G} [-] Successfully Installed !\n${W}"
     sleep 1
-    cat <<EOF
-${G}[-] Type ${C}vncstart${G} to run VNC server.
-${G}[-] Type ${C}vncstop${G} to stop VNC server.
 
-${C}Install VNC VIEWER on your Device.
-
-${C}Open VNC VIEWER & Click on + Button.
-
-${C}Enter the Address localhost:1 & Name anything you like.
-
-${C}Set the Picture Quality to High for better Quality.
-
-${C}Click on Connect & Input the Password.
-
-${C}Enjoy :D${W}
-EOF
+    echo -e "${G}[-] Type ${C}vncstart${G} to run VNC server."
+    echo -e "${G}[-] Type ${C}vncstop${G} to stop VNC server."
+    echo -e ""
+    echo -e "${C}Install VNC VIEWER on your Device."
+    echo -e ""
+    echo -e "${C}Open VNC VIEWER & Click on + Button."
+    echo -e ""
+    echo -e "${C}Enter the Address localhost:1 & Name anything you like."
+    echo -e ""
+    echo -e "${C}Set the Picture Quality to High for better Quality."
+    echo -e ""
+    echo -e "${C}Click on Connect & Input the Password."
+    echo -e ""
+    echo -e "${C}Enjoy :D${W}"
 }
 
 package() {
