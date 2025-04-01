@@ -41,21 +41,21 @@ function remove_sudo() {
     apt remove sudo -y
 }
 
-# Cài đặt LXDE và XRDP
-function install_xrdp_lxde() {
+# Cài đặt LXQt và XRDP
+function install_xrdp_lxqt() {
     system_update
     remove_sudo
-    install_package lxde
+    install_package lxqt-core
     install_package xrdp
 
-    echo "lxsession -s LXDE -e LXDE" >> /etc/xrdp/startwm.sh
+    echo "lxqt-session" >> /etc/xrdp/startwm.sh
 
     echo -e "${YELLOW}Nhập port cho RDP:${NC}"
     read selectedPort
     sed -i "s/port=3389/port=$selectedPort/g" /etc/xrdp/xrdp.ini
 
     service xrdp restart
-    echo -e "${GREEN}RDP đã được tạo và chạy trên cổng $selectedPort${NC}"
+    echo -e "${GREEN}RDP với LXQt đã được tạo và chạy trên cổng $selectedPort${NC}"
 }
 
 # Cài đặt PufferPanel
@@ -142,7 +142,7 @@ function install_nodejs() {
 check_root
 
 echo "Chọn một tùy chọn:"
-echo "1) Cài đặt LXDE - XRDP"
+echo "1) Cài đặt LXQt - XRDP"
 echo "2) Cài đặt PufferPanel"
 echo "3) Cài đặt các gói cơ bản"
 echo "4) Cài đặt Node.js"
@@ -150,7 +150,7 @@ echo "4) Cài đặt Node.js"
 read -p "Nhập lựa chọn của bạn (1-4): " option
 
 case $option in
-    1) install_xrdp_lxde ;;
+    1) install_xrdp_lxqt ;;
     2) install_pufferpanel ;;
     3) install_basic_packages ;;
     4) install_nodejs ;;
