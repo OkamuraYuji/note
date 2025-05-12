@@ -10,8 +10,6 @@ $PROOT_PATH \
   --kill-on-exit \
   env HOME=/root /bin/bash -c "sshx" > sshx_output.txt
 
-LINK=$(grep -o 'https://sshx.io/s/[^ ]*' sshx_output.txt)
+LINK=$(cat sshx_output.txt | sed 's/\x1b\[[0-9;]*m//g' | grep -o 'https://sshx.io/s/[^ ]*')
 
 echo "$LINK" > sshx_link.txt
-
-echo "Đã lưu link SSHX vào sshx_link.txt"
