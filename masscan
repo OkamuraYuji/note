@@ -1,4 +1,4 @@
 apt update && apt upgrade -y
 apt -y install git gcc make libpcap-dev
 git clone https://github.com/robertdavidgraham/masscan && cd masscan && make && sudo make install
-sudo masscan -p5900 -iL ip_ranges.txt --rate 100000000 --exclude 255.255.255.255 -oG - | grep "open" | awk '{print $4:5900}' > ips-vnc.txt
+sudo masscan -p5900 -iL ip_ranges.txt --rate 100000000 --exclude 255.255.255.255 -oG - | grep "open" | awk '{print $2 ":5900"}' > ips-vnc.txt
