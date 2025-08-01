@@ -7,8 +7,10 @@ INSTALL_DIR="/app/data"
 cd "$INSTALL_DIR"
 
 if [ -f bedrock_server ]; then
+  echo "$BEDROCK_VERSION"
   echo "✅ Skipping installation."
 else
+  echo "$BEDROCK_VERSION"
   echo "📦 Installing Bedrock server..."
 
   apt update -qq > /dev/null
