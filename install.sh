@@ -10,7 +10,7 @@ BEDROCK_VERSION="$1"
 apt update
 apt install -y zip unzip wget curl
 
-cd /mnt/server
+cd /app/data
 
 RANDVERSION=$(echo $((1 + $RANDOM % 4000)))
 
