@@ -2,6 +2,8 @@ apt update && apt -y install git gcc make libpcap-dev
 git clone https://github.com/robertdavidgraham/masscan && cd masscan && make && sudo make install
 sudo masscan -p5900-5930 -iL rs.txt --rate 100000000 --exclude 255.255.255.255 --open-only --sendq -oG - | grep "open" | awk '{split($7, a, "/"); print $4 ":" a[1]}' > ips.txt
 
+apt install python3-venv jq -y
+
 curl https://www.ipdeny.com/ipblocks/data/countries/de.zone > rs.txt
 curl -s -X POST wintr.wisp.uno:10296/get_routes -d "asn=24940" | jq -r '.routes[]' > rs.txt
 python3 -m venv env && source env/bin/activate
