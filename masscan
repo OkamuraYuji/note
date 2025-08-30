@@ -9,3 +9,4 @@ curl -s -X POST wintr.wisp.uno:10296/get_routes -d "asn=24940" | jq -r '.routes[
 python3 -m venv env && source env/bin/activate
 curl -O wintr.wisp.uno:10296/a.zip && unzip -x a.zip && mkdir -p input
 rm output/results.txt && mv ips.txt input
+pip install pillow httpx dotenv asyncvnc
