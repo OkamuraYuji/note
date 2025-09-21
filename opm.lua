@@ -127,7 +127,7 @@ local function teleportWithSave(callback)
 	queue_on_teleport([[
         getgenv().SavedStates = ]]..savedStr..[[
 
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Mashirino/GPTHUB-V1.1/refs/heads/main/GPT%20HUB%20V.1.1.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/OkamuraYuji/note/refs/heads/main/opm.lua"))()
 
         if getgenv().SavedStates then
             States.AutoChest = getgenv().SavedStates.AutoChest
